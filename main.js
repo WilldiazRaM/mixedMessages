@@ -20,14 +20,24 @@ const mensajesMotivacionales = [
     "El verdadero éxito es encontrar satisfacción en cada pequeño paso que tomas hacia adelante."
   ];
 
-function numeroRandom() {
-    return Math.floor(Math.random() * 7) + 1
+
+function numeroRandom(usedIndices) {
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * mensajesMotivacionales.length);
+    } while (usedIndices.includes(randomIndex));
+    return randomIndex;
 }
 
 const funcion1 = (arr1, arr2) => {
+    const usedIndices = [];
+
     arr1.forEach(dia => {
-        const mensajeAleatorio = mensajesMotivacionales[numeroRandom()];
-        console.log(`Mensaje Motivacional: \n ${dia}: ${mensajeAleatorio}`)
+        const mensajeAleatorioIndex = numeroRandom(usedIndices);
+        usedIndices.push(mensajeAleatorioIndex);
+
+        const mensajeAleatorio = mensajesMotivacionales[mensajeAleatorioIndex];
+        console.log(`Mensaje Motivacional: \n ${dia}: ${mensajeAleatorio}`);
     });
 }
 
