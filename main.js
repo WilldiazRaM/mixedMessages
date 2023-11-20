@@ -15,8 +15,15 @@ const mensajesMotivacionales = [
   "Nunca es demasiado tarde para ser lo que podrías haber sido."
 ];
 
-
-
-const funcion1 = arr => {
-    
+function numeroRandom() {
+    return Math.floor(Math.random() * 7) + 1
 }
+
+const funcion1 = (arr1, arr2) => {
+    arr1.forEach(dia => {
+        const mensajeAleatorio = mensajesMotivacionales[numeroRandom()];
+        console.log(`Mensaje Motivacional: \n ${dia}: ${mensajeAleatorio}`)
+    });
+}
+
+funcion1(diaSemana, mensajesMotivacionales);
