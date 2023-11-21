@@ -29,7 +29,7 @@ function numeroRandom(usedIndices) {
     return randomIndex;
 }
 
-const funcion1 = (arr1, arr2) => {
+const funcion1 = (arr1) => {
     const usedIndices = [];
 
     arr1.forEach(dia => {
